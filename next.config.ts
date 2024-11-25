@@ -1,7 +1,7 @@
-import type { NextConfig } from "next"
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  // experimental: {
+	// experimental: {
 	// 	missingSuspenseWithCSRBailout: false
 	// },
 	env: {
@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
 		remotePatterns: [
 			{
 				protocol: 'https',
-				hostname: 'lh3.googleusercontent.com',
+				hostname: 'lh3.googleusercontent.com'
 			},
 			{
 				protocol: 'https',
@@ -20,6 +20,6 @@ const nextConfig: NextConfig = {
 			}
 		]
 	}
-};
+}
 
-export default nextConfig;
+export default nextConfig

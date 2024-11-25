@@ -1,4 +1,4 @@
-import { URL_CONST } from '@/shared/constants/url.constant'
+import { URL_CONST } from '@/shared/constants'
 
 import { AuthWrapperProps } from '../types/auth.types'
 

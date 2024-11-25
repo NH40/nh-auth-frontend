@@ -4,6 +4,7 @@ import { type PropsWithChildren, useEffect, useState } from 'react'
 
 import { TanstackQueryProvider } from './TanstackQueryProvider'
 import { ThemeProvider } from './ThemeProvider'
+import ToastProvider from './ToastProvider'
 
 export function MainProvider({ children }: PropsWithChildren<unknown>) {
 	const [mounted, setMounted] = useState(false)
@@ -24,6 +25,7 @@ export function MainProvider({ children }: PropsWithChildren<unknown>) {
 				disableTransitionOnChange
 				storageKey='hn-auth'
 			>
+				<ToastProvider />
 				{children}
 			</ThemeProvider>
 		</TanstackQueryProvider>
