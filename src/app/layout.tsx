@@ -21,8 +21,8 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang='ru'>
-			<body>
+		<html lang='ru' suppressHydrationWarning>
+			<body suppressHydrationWarning>
 				<MainProvider>
 					<div className='relative flex min-h-screen flex-col'>
 						<ToggleTheme />

@@ -25,6 +25,14 @@ class AuthService {
 		return response
 	}
 
+	public async oauthByProvider(provider: 'google' | 'yandex') {
+		const response = await api.get<{ url: string }>(
+			`${AUTH_API_URL.connect}/${provider}`
+		)
+
+		return response
+	}
+
 	public async logout() {
 		const response = await api.post(AUTH_API_URL.logout)
 

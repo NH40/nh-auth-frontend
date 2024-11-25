@@ -1,17 +1,23 @@
+'use client'
+
 import { FC } from 'react'
 import { FaGoogle, FaYandex } from 'react-icons/fa'
 
 import { Button } from '@/shared/components/ui'
 
+import { useSocialMedia } from '../hooks/useSocialMedia'
+
 const AuthSocial: FC = () => {
+	const { onClick } = useSocialMedia()
+
 	return (
 		<>
 			<div className='grid grid-cols-2 gap-6'>
-				<Button variant='outline'>
+				<Button variant='outline' onClick={() => onClick('google')}>
 					<FaGoogle className='mr-2 size-4' />
 					Google
 				</Button>
-				<Button variant='outline'>
+				<Button variant='outline' onClick={() => onClick('yandex')}>
 					<FaYandex className='mr-2 size-4' />
 					Яндекс
 				</Button>
