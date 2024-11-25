@@ -5,7 +5,7 @@ import { FaGoogle, FaYandex } from 'react-icons/fa'
 
 import { Button } from '@/shared/components/ui'
 
-import { useSocialMedia } from '../hooks/useSocialMedia'
+import { useSocialMedia } from '../hooks'
 
 const AuthSocial: FC = () => {
 	const { onClick } = useSocialMedia()

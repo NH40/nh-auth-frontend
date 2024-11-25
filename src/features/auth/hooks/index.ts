@@ -1,6 +1,7 @@
 export * from './useLoginMutation'
 export * from './useRegisterMutation'
+export * from './useSocialMedia'
 // export * from './useNewPasswordMutation'
 // export * from './useRegisterMutation'
 // export * from './useResetPasswordMutation'
-// export * from './useVerificationMutation'
+export * from './useVerificationMutation'
