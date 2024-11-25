@@ -9,3 +9,11 @@ export const REGISTER_WRAPPER_CONSTANT: AuthWrapperProps = {
 	backButtonLabel: 'Уже есть аккаунт? Войти',
 	isShowSocialMedia: true
 }
+
+export const LOGIN_WRAPPER_CONSTANT: AuthWrapperProps = {
+	heading: 'Войти',
+	description: 'Чтобы войти в аккаунт введите ваш email и пароль',
+	backButtonHref: URL_CONST.register,
+	backButtonLabel: 'Еще нет аккаунта? Регистрация',
+	isShowSocialMedia: true
+}
