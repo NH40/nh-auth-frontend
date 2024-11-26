@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useTheme } from 'next-themes'
-import { FC, useEffect, useState } from 'react'
+import { FC, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
@@ -28,11 +28,6 @@ import AuthWrapper from './AuthWrapper'
 const RegisterForm: FC = () => {
 	const { theme } = useTheme()
 	const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null)
-	const [recaptchaKey, setRecaptchaKey] = useState<number>(0)
-
-	useEffect(() => {
-		setRecaptchaKey(prev => prev + 1)
-	}, [theme])
 
 	const form = useForm<TypeRegisterSchema>({
 		resolver: zodResolver(RegisterSchema),
@@ -134,7 +129,6 @@ const RegisterForm: FC = () => {
 					/>
 					<div className='flex justify-center'>
 						<ReCAPTCHA
-							key={recaptchaKey}
 							sitekey={GOOGLE_RECAPTCHA_SITE_KEY}
 							onChange={setRecaptchaValue}
 							theme={theme === 'light' ? 'light' : 'dark'}
