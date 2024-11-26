@@ -2,6 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useTheme } from 'next-themes'
+import Link from 'next/link'
 import { FC, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useForm } from 'react-hook-form'
@@ -17,7 +18,7 @@ import {
 	FormMessage,
 	Input
 } from '@/shared/components/ui'
-import { GOOGLE_RECAPTCHA_SITE_KEY } from '@/shared/constants'
+import { GOOGLE_RECAPTCHA_SITE_KEY, URL_CONST } from '@/shared/constants'
 
 import { LOGIN_WRAPPER_CONSTANT } from '../constants/authWrapper.constant'
 import { useLoginMutation } from '../hooks'
@@ -101,12 +102,20 @@ const LoginForm: FC = () => {
 								name='password'
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel>Пароль</FormLabel>
+										<div className='flex items-center justify-between'>
+											<FormLabel>Пароль</FormLabel>
+											<Link
+												href={URL_CONST.resetPassword}
+												className='ml-auto inline-block text-sm underline'
+											>
+												Забыли пароль?
+											</Link>
+										</div>
 										<FormControl>
 											<Input
-												type='password'
-												disabled={isLoadingLogin}
 												placeholder='******'
+												disabled={isLoadingLogin}
+												type='password'
 												{...field}
 											/>
 										</FormControl>
